@@ -5,29 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="300dp"
-    android:layout_height="500dp"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:background="@color/grey"/>
 
-  <FrameLayout
-      android:layout_width="match_parent"
-      android:layout_height="80dp"
-      android:background="@color/grey_dark"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"/>
+    <LinearLayout
+        android:id="@+id/background_layout_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/grey"
+        android:orientation="vertical" />
+
     <FrameLayout
+        android:id="@+id/top_bar_main_activity"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/grey_dark"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/background_layout_main_activity"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/bottom_bar_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/grey_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/background_layout_main_activity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
