@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_menu_height">120dp</dimen>
+    <dimen name="cardview_menu_elevation">15dp</dimen>
+    <dimen name="cardview_menu_cornerradius">15dp</dimen>
+    <dimen name="cardview_menu_poster_width">90dp</dimen>
+</resources>
