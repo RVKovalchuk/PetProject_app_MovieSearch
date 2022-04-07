@@ -4,4 +4,7 @@
     <dimen name="cardview_menu_elevation">15dp</dimen>
     <dimen name="cardview_menu_cornerradius">15dp</dimen>
     <dimen name="cardview_menu_poster_width">90dp</dimen>
+    <dimen name="gridlayout_margin">16dp</dimen>
+    <dimen name="gridlayout_cardview_width">150dp</dimen>
+    <dimen name="gridlayout_cardview_height">200dp</dimen>
 </resources>

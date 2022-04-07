@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:columnCount="2"
         android:useDefaultMargins="true"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/gridlayout_margin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menu_cardView"
@@ -79,8 +79,8 @@
         android:layoutAnimation="@anim/poster_menu_animation_layout">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/gridlayout_cardview_width"
+            android:layout_height="@dimen/gridlayout_cardview_height"
             app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
             android:elevation="@dimen/cardview_menu_elevation"
             android:clickable="true"
@@ -94,8 +94,8 @@
                 android:contentDescription="@string/text_poster_thefellowshipofthering" />
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/gridlayout_cardview_width"
+            android:layout_height="@dimen/gridlayout_cardview_height"
             app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
             android:elevation="@dimen/cardview_menu_elevation"
             android:clickable="true"
@@ -109,8 +109,8 @@
                 android:contentDescription="@string/text_poster_oneplusone" />
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/gridlayout_cardview_width"
+            android:layout_height="@dimen/gridlayout_cardview_height"
             app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
             android:elevation="@dimen/cardview_menu_elevation"
             android:clickable="true"
@@ -124,8 +124,8 @@
                 android:contentDescription="@string/text_poster_forrestgump" />
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/gridlayout_cardview_width"
+            android:layout_height="@dimen/gridlayout_cardview_height"
             app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
             android:elevation="@dimen/cardview_menu_elevation"
             android:clickable="true"
