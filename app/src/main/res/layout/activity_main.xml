@@ -5,29 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="300dp"
-    android:layout_height="500dp"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:background="@color/grey"/>
 
-  <FrameLayout
-      android:layout_width="match_parent"
-      android:layout_height="80dp"
-      android:background="@color/grey_dark"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"/>
-    <FrameLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@color/grey_dark"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/text_menu_background"
+        android:theme="@style/Theme.MovieSearch.Background"
+        app:layout_constraintBottom_toTopOf="@id/bottom_app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="@id/menu_cardView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/menu_cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/cardview_menu_height"
+        android:elevation="@dimen/cardview_menu_elevation"
+        app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_app_bar_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/poster_menu_thegreenmile"
+                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/text_poster_thegreenmile"
+                android:scaleType="fitXY"
+                android:src="@drawable/poster_menu_thegreenmile" />
+
+            <ImageView
+                android:id="@+id/poster_menu_theshawshankredemption"
+                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/text_poster_theshawshankredemption"
+                android:scaleType="fitXY"
+                android:src="@drawable/poster_menu_theshawshankredemption" />
+
+            <ImageView
+                android:id="@+id/poster_menu_thereturnoftheking"
+                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/text_poster_thereturnoftheking"
+                android:scaleType="fitXY"
+                android:src="@drawable/poster_menu_thereturnoftheking" />
+
+            <ImageView
+                android:id="@+id/poster_menu_thetwotowers"
+                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/text_poster_thetwotowers"
+                android:scaleType="fitXY"
+                android:src="@drawable/poster_menu_thetwotowers" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar_tool"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/menu_toolbar"
+            app:navigationIcon="@drawable/ic_menu_menu"
+            app:title="@string/title_menu" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MovieSearch.BottomBar"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

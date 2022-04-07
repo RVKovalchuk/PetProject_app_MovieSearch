@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Movie Search</string>
+    <string name="app_name">Finder of Movie</string>
+
+    <string name="text_poster_theshawshankredemption">Побег из Шоушенка</string>
+    <string name="text_poster_thegreenmile">Зеленая миля</string>
+    <string name="text_poster_thereturnoftheking">Властелин колец: Возвращение короля</string>
+    <string name="text_poster_thetwotowers">Властелин колец: Две крепости</string>
+
+    <string name="text_menu_background">Задний фон</string>
+
+    //titles of menu buttons
+    <string name="title_menu">Find a movie!</string>
+    <string name="title_menu_settings">Настройки</string>
+    <string name="title_menu_favorite">Избранное</string>
+    <string name="title_menu_watch_later">Смотреть позднее</string>
+    <string name="title_menu_selections">Подборки</string>
+
 </resources>
