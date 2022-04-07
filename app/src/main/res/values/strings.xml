@@ -14,5 +14,9 @@
     <string name="title_menu_favorite">Избранное</string>
     <string name="title_menu_watch_later">Смотреть позднее</string>
     <string name="title_menu_selections">Подборки</string>
+    <string name="text_poster_thefellowshipofthering">Властелин колец: Братство кольца</string>
+    <string name="text_poster_oneplusone">1+1</string>
+    <string name="text_poster_forrestgump">Форрест Гамп</string>
+    <string name="text_poster_pulpfiction">Криминальное чтиво</string>
 
 </resources>

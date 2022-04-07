@@ -66,6 +66,80 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:useDefaultMargins="true"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_cardView"
+        app:layout_constraintBottom_toTopOf="@id/bottom_app_bar"
+        android:layoutAnimation="@anim/poster_menu_animation_layout">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
+            android:elevation="@dimen/cardview_menu_elevation"
+            android:clickable="true"
+            android:focusable="true"
+            android:stateListAnimator="@animator/poster_menu_selector">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/poster_menu_thefelloshipofthering"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/text_poster_thefellowshipofthering" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
+            android:elevation="@dimen/cardview_menu_elevation"
+            android:clickable="true"
+            android:focusable="true"
+            android:stateListAnimator="@animator/poster_menu_selector">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/poster_menu_oneplusone"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/text_poster_oneplusone" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
+            android:elevation="@dimen/cardview_menu_elevation"
+            android:clickable="true"
+            android:focusable="true"
+            android:stateListAnimator="@animator/poster_menu_selector">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/poster_menu_forrestgump"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/text_poster_forrestgump" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
+            android:elevation="@dimen/cardview_menu_elevation"
+            android:clickable="true"
+            android:focusable="true"
+            android:stateListAnimator="@animator/poster_menu_selector">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/poster_menu_pulpfiction"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/text_poster_pulpfiction" />
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/top_app_bar_layout"
         android:layout_width="match_parent"
