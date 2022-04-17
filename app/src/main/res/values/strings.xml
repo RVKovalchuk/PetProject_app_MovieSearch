@@ -14,5 +14,6 @@
     <string name="title_menu_favorite">Избранное</string>
     <string name="title_menu_watch_later">Смотреть позднее</string>
     <string name="title_menu_selections">Подборки</string>
+    <string name="film_item_poster_description">poster</string>
 
 </resources>
