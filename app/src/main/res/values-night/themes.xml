@@ -21,4 +21,14 @@
     <style name="Theme.MovieSearch.Background" parent="ThemeOverlay.MaterialComponents.Light">
         <item name="android:background">@drawable/shape_background_dark</item>
     </style>
+
+    <style name="Theme.MovieSearch.ContentScrim" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="contentScrim">@color/grey</item>
+        <item name="collapsedTitleTextColor">@color/grey_almost_white</item>
+        <item name="expandedTitleTextColor">@color/grey_almost_white</item>
+    </style>
+
+    <style name="Theme.MovieSearch.Text" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:textColor">@color/grey_almost_white</item>
+    </style>
 </resources>

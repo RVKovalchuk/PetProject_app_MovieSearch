@@ -4,4 +4,11 @@
     <dimen name="cardview_menu_elevation">15dp</dimen>
     <dimen name="cardview_menu_cornerradius">15dp</dimen>
     <dimen name="cardview_menu_poster_width">90dp</dimen>
+
+    //activity_details
+    <dimen name="activity_details_app_bar_layout_height">220dp</dimen>
+    <dimen name="activity_details_collapsing_toolbar_layout_minheight">60dp</dimen>
+    <dimen name="activity_details_fab_margin">20dp</dimen>
+    <dimen name="activity_details_text_view_margin">16dp</dimen>
+
 </resources>
