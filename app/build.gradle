@@ -49,4 +49,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 
+    implementation 'nl.joery.animatedbottombar:library:1.1.0'
 }
