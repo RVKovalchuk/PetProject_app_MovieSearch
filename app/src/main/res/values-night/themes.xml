@@ -31,4 +31,11 @@
     <style name="Theme.MovieSearch.Text" parent="ThemeOverlay.MaterialComponents.Light">
         <item name="android:textColor">@color/grey_almost_white</item>
     </style>
+
+    <style name="Theme.MovieSearch.DialogAlert" parent="Theme.MovieSearch">
+        <item name="android:textColor">@color/grey_almost_white</item>
+        <item name="android:background">@color/grey_dark</item>
+        <item name="colorPrimary">@color/grey_almost_white</item>
+    </style>
+
 </resources>

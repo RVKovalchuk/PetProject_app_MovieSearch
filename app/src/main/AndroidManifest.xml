@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieSearch">
         <activity
-            android:name=".DetailsActivity"
+            android:name=".DetailsFragment"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
