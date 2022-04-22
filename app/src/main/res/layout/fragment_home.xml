@@ -19,9 +19,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/menu_cardView"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/cardview_menu_height"
-        android:elevation="@dimen/cardview_menu_elevation"
-        app:cardCornerRadius="@dimen/cardview_menu_cornerradius"
+        android:layout_height="@dimen/fragment_home_cardview_height"
+        android:elevation="@dimen/fragment_home_cardview_elevation"
+        app:cardCornerRadius="@dimen/fragment_home_cardview_cornerradius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -33,7 +33,7 @@
 
             <ImageView
                 android:id="@+id/poster_menu_thegreenmile"
-                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_width="@dimen/fragment_home_cardview_poster_width"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/text_poster_thegreenmile"
                 android:scaleType="fitXY"
@@ -41,7 +41,7 @@
 
             <ImageView
                 android:id="@+id/poster_menu_theshawshankredemption"
-                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_width="@dimen/fragment_home_cardview_poster_width"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/text_poster_theshawshankredemption"
                 android:scaleType="fitXY"
@@ -49,7 +49,7 @@
 
             <ImageView
                 android:id="@+id/poster_menu_thereturnoftheking"
-                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_width="@dimen/fragment_home_cardview_poster_width"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/text_poster_thereturnoftheking"
                 android:scaleType="fitXY"
@@ -57,7 +57,7 @@
 
             <ImageView
                 android:id="@+id/poster_menu_thetwotowers"
-                android:layout_width="@dimen/cardview_menu_poster_width"
+                android:layout_width="@dimen/fragment_home_cardview_poster_width"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/text_poster_thetwotowers"
                 android:scaleType="fitXY"
@@ -68,12 +68,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginStart="@dimen/fragment_home_recyclerview_margin_start"
+        android:layout_marginTop="@dimen/fragment_home_recyclerview_margin_top"
+        android:layout_marginEnd="@dimen/fragment_home_recyclerview_margin_end"
+        android:layout_marginBottom="@dimen/fragment_home_recyclerview_margin_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

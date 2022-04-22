@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/film_item_container"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:elevation="@dimen/cardview_menu_elevation"
-    app:cardCornerRadius="@dimen/cardview_menu_cornerradius">
+    android:layout_height="@dimen/film_item_card_view_height"
+    android:elevation="@dimen/film_item_card_view_elevation"
+    app:cardCornerRadius="@dimen/film_item_card_view_cornerradius">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,9 +13,9 @@
 
         <ImageView
             android:id="@+id/film_item_poster"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
+            android:layout_width="@dimen/film_item_view_width"
+            android:layout_height="@dimen/film_item_view_height"
+            android:layout_margin="@dimen/film_item_view_margin"
             android:contentDescription="@string/film_item_poster_description"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,13 +23,13 @@
 
         <TextView
             android:id="@+id/film_item_title"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="3"
-            android:padding="5dp"
+            android:padding="@dimen/film_item_text_view_padding"
             android:textAlignment="center"
-            android:textSize="16sp"
+            android:textSize="@dimen/preview_text_size"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/film_item_poster"
@@ -37,12 +37,12 @@
 
         <TextView
             android:id="@+id/film_item_description"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/zero_dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="7"
-            android:padding="5dp"
-            android:textSize="14sp"
+            android:padding="@dimen/film_item_text_view_padding"
+            android:textSize="@dimen/description_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/film_item_poster"
             app:layout_constraintTop_toBottomOf="@id/film_item_title" />

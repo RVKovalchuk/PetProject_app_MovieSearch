@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/activity_details_app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_details_app_bar_layout_height"
+        android:layout_height="@dimen/fragment_details_app_bar_layout_height"
         android:fitsSystemWindows="false">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            android:minHeight="@dimen/activity_details_collapsing_toolbar_layout_minheight"
+            android:minHeight="@dimen/fragment_details_collapsing_toolbar_layout_minheight"
             android:theme="@style/Theme.MovieSearch.ContentScrim"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimAnimationDuration="1000"
@@ -45,12 +45,13 @@
         android:id="@+id/activity_details_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_details_fab_margin"
+        android:layout_margin="@dimen/fragment_details_fab_margin"
         android:background="@color/white"
         android:backgroundTint="@color/grey_almost_white"
         app:layout_anchor="@id/activity_details_app_bar"
         app:layout_anchorGravity="bottom|right"
-        app:srcCompat="@drawable/ic_activity_details_share" />
+        app:srcCompat="@drawable/ic_activity_details_share"
+        android:contentDescription="@string/description_fab" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -61,8 +62,8 @@
             android:id="@+id/activity_details_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_details_text_view_margin"
-            android:textSize="18sp"
+            android:layout_margin="@dimen/fragment_details_text_view_margin"
+            android:textSize="@dimen/preview_text_size"
             android:theme="@style/Theme.MovieSearch.Text"
             tools:text="@tools:sample/lorem/random" />
     </androidx.core.widget.NestedScrollView>

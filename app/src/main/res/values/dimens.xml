@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="cardview_menu_height">120dp</dimen>
-    <dimen name="cardview_menu_elevation">15dp</dimen>
-    <dimen name="cardview_menu_cornerradius">15dp</dimen>
-    <dimen name="cardview_menu_poster_width">90dp</dimen>
+    //text
+    <dimen name="preview_text_size">18sp</dimen>
+    <dimen name="description_text_size">14sp</dimen>
+    //zero dp
+    <dimen name="zero_dp">0dp</dimen>
 
-    //activity_details
-    <dimen name="activity_details_app_bar_layout_height">220dp</dimen>
-    <dimen name="activity_details_collapsing_toolbar_layout_minheight">60dp</dimen>
-    <dimen name="activity_details_fab_margin">20dp</dimen>
-    <dimen name="activity_details_text_view_margin">16dp</dimen>
+
+    //fragment_home
+    <dimen name="fragment_home_cardview_height">120dp</dimen>
+    <dimen name="fragment_home_cardview_elevation">15dp</dimen>
+    <dimen name="fragment_home_cardview_cornerradius">15dp</dimen>
+    <dimen name="fragment_home_cardview_poster_width">90dp</dimen>
+    //recyclerview fragment_home
+    <dimen name="fragment_home_recyclerview_margin_start">16dp</dimen>
+    <dimen name="fragment_home_recyclerview_margin_end">16dp</dimen>
+    <dimen name="fragment_home_recyclerview_margin_top">5dp</dimen>
+    <dimen name="fragment_home_recyclerview_margin_bottom">5dp</dimen>
+
+
+    //fragment_details
+    <dimen name="fragment_details_app_bar_layout_height">220dp</dimen>
+    <dimen name="fragment_details_collapsing_toolbar_layout_minheight">60dp</dimen>
+    <dimen name="fragment_details_fab_margin">20dp</dimen>
+    <dimen name="fragment_details_text_view_margin">16dp</dimen>
+
+    //film_item
+    <dimen name="film_item_view_width">100dp</dimen>
+    <dimen name="film_item_view_height">150dp</dimen>
+    <dimen name="film_item_view_margin">5dp</dimen>
+    <dimen name="film_item_card_view_height">160dp</dimen>
+    <dimen name="film_item_text_view_padding">5dp</dimen>
+    <dimen name="film_item_card_view_elevation">15dp</dimen>
+    <dimen name="film_item_card_view_cornerradius">15dp</dimen>
 
 </resources>
