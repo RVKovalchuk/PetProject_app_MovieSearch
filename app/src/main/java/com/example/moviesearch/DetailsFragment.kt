@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -20,8 +19,6 @@ class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setDetails()
     }
-
-
     private fun setDetails() {
         val film = arguments?.get("film") as Film
         activity_details_toolbar.title = film.title

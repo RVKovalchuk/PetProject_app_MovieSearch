@@ -7,7 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import nl.joery.animatedbottombar.AnimatedBottomBar
+
+private const val COUNT_OF_BACKSTACK_ONE = 1
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,15 +20,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount == 1) {
+        if (supportFragmentManager.backStackEntryCount == COUNT_OF_BACKSTACK_ONE) {
             super.onBackPressed()
             AlertDialog.Builder(ContextThemeWrapper(this, R.style.Theme_MovieSearch_DialogAlert))
-                .setTitle("Хотите выйти?")
+                .setTitle(R.string.title)
                 .setIcon(R.drawable.ic_alert_dialog_exit)
-                .setPositiveButton("Да") { _, _ ->
+                .setPositiveButton(R.string.button_positive) { _, _ ->
                     finish()
                 }
-                .setNegativeButton("Нет") { _, _ ->
+                .setNegativeButton(R.string.button_negative) { _, _ ->
                     supportFragmentManager()
                 }
                 .show()
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.settings -> {
-                    Toast.makeText(this, "Настройки", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.title_menu_settings, Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
@@ -56,15 +57,15 @@ class MainActivity : AppCompatActivity() {
         bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.favorite -> {
-                    Toast.makeText(this, "Избранное", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.title_menu_favorite, Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.watch_later -> {
-                    Toast.makeText(this, "Смотреть позднее", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.title_menu_watch_later, Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.selections -> {
-                    Toast.makeText(this, "Подборки", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.title_menu_selections, Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false

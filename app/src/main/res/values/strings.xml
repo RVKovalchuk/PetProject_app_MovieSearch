@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Finder of Movie</string>
 
+    //MainActivity. AlertDialog
+    <string name="title">Хотите выйти?</string>
+    <string name="button_positive">Да</string>
+    <string name="button_negative">Нет</string>
+
+
+
     <string name="text_poster_theshawshankredemption">Побег из Шоушенка</string>
     <string name="text_poster_thegreenmile">Зеленая миля</string>
     <string name="text_poster_thereturnoftheking">Властелин колец: Возвращение короля</string>
@@ -15,8 +22,8 @@
     <string name="title_menu_watch_later">Смотреть позднее</string>
     <string name="title_menu_selections">Подборки</string>
     <string name="film_item_poster_description">poster</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //fragment_details FAB
     <string name="description_fab">description_fab</string>
 
 </resources>
