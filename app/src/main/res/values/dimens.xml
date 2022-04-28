@@ -18,6 +18,11 @@
     <dimen name="fragment_home_recyclerview_margin_top">5dp</dimen>
     <dimen name="fragment_home_recyclerview_margin_bottom">5dp</dimen>
 
+    //recyclerview fragment_favorites
+    <dimen name="fragment_favorites_recyclerview_margin_start">16dp</dimen>
+    <dimen name="fragment_favorites_recyclerview_margin_end">16dp</dimen>
+    <dimen name="fragment_favorites_recyclerview_margin_top">5dp</dimen>
+    <dimen name="fragment_favorites_recyclerview_margin_bottom">5dp</dimen>
 
     //fragment_details
     <dimen name="fragment_details_app_bar_layout_height">220dp</dimen>

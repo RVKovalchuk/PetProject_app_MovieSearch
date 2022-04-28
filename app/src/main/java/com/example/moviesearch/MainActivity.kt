@@ -57,7 +57,11 @@ class MainActivity : AppCompatActivity() {
         bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.favorite -> {
-                    Toast.makeText(this, R.string.title_menu_favorite, Toast.LENGTH_SHORT).show()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fragment_placeholder, FavoritesFragment())
+                        .addToBackStack(null)
+                        .commit()
                     true
                 }
                 R.id.watch_later -> {
