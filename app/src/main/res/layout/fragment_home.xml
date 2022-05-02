@@ -40,6 +40,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragment_home_search"
-        tools:listitem="@layout/film_item" />
-
+        tools:listitem="@layout/film_item"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

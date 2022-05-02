@@ -42,4 +42,7 @@
         <item name="android:background">@drawable/shape_fragment_home_search_background_night</item>
     </style>
 
+    <style name="Theme.MovieSearch.FilmItem" parent="Theme.MovieSearch">
+        <item name="android:background">@drawable/shape_film_item_background_night</item>
+    </style>
 </resources>

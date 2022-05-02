@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        style="@style/Theme.MovieSearch.FilmItem">
 
         <ImageView
             android:id="@+id/film_item_poster"
@@ -19,7 +20,7 @@
             android:contentDescription="@string/film_item_poster_description"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/film_item_title"
@@ -33,7 +34,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/film_item_poster"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Theme.MovieSearch.Text"/>
 
         <TextView
             android:id="@+id/film_item_description"
@@ -45,7 +47,8 @@
             android:textSize="@dimen/description_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/film_item_poster"
-            app:layout_constraintTop_toBottomOf="@id/film_item_title" />
+            app:layout_constraintTop_toBottomOf="@id/film_item_title"
+            style="@style/Theme.MovieSearch.Text"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

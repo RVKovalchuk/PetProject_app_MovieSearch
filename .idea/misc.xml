@@ -42,9 +42,12 @@
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/ic_menu_favorite.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/ic_menu_search.xml" value="0.1" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_dark.xml" value="0.1" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_film_item_background_day.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_fragment_home_search_background.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_fragment_home_search_background_day.xml" value="0.1385" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_fragment_home_search_background_night.xml" value="0.1" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_recyclerview_film_item.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/activity_details.xml" value="0.16" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/film_item.xml" value="0.1" />
