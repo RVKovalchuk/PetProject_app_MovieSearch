@@ -19,7 +19,7 @@
             android:contentDescription="@string/film_item_poster_description"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/film_item_title"
