@@ -16,29 +16,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/fragment_home_search"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fragment_home_search_view_margin"
-        android:imeOptions="actionSearch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/Theme.MovieSearch.Search"
-        app:iconifiedByDefault="false"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="@dimen/zero_dp"
         android:layout_height="@dimen/zero_dp"
-        android:layout_marginStart="@dimen/fragment_home_recyclerview_margin_start"
-        android:layout_marginTop="@dimen/fragment_home_recyclerview_margin_top"
-        android:layout_marginEnd="@dimen/fragment_home_recyclerview_margin_end"
-        android:layout_marginBottom="@dimen/fragment_home_recyclerview_margin_bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragment_home_search"
-        tools:listitem="@layout/film_item"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:elevation="@dimen/film_item_card_view_elevation">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/fragment_home_search"
+                    style="@style/Theme.MovieSearch.Search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fragment_home_search_view_margin"
+                    android:imeOptions="actionSearch"
+                    app:iconifiedByDefault="false" />
+            </androidx.cardview.widget.CardView>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/fragment_home_recyclerview_margin_start"
+            android:layout_marginTop="@dimen/fragment_home_recyclerview_margin_top"
+            android:layout_marginEnd="@dimen/fragment_home_recyclerview_margin_end"
+            android:layout_marginBottom="@dimen/fragment_home_recyclerview_margin_bottom"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            tools:listitem="@layout/film_item" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

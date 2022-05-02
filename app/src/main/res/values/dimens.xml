@@ -34,8 +34,8 @@
 
     //film_item
     <dimen name="film_item_view_width">100dp</dimen>
-    <dimen name="film_item_view_height">160dp</dimen>
-    <dimen name="film_item_view_margin">5dp</dimen>
+    <dimen name="film_item_view_height">158dp</dimen>
+    <dimen name="film_item_view_margin">1dp</dimen>
     <dimen name="film_item_card_view_height">160dp</dimen>
     <dimen name="film_item_text_view_padding">5dp</dimen>
     <dimen name="film_item_card_view_elevation">15dp</dimen>

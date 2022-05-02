@@ -16,6 +16,7 @@
             android:id="@+id/film_item_poster"
             android:layout_width="@dimen/film_item_view_width"
             android:layout_height="@dimen/film_item_view_height"
+            android:layout_margin="@dimen/film_item_view_margin"
             android:contentDescription="@string/film_item_poster_description"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
