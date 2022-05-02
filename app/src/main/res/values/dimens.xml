@@ -17,6 +17,8 @@
     <dimen name="fragment_home_recyclerview_margin_end">16dp</dimen>
     <dimen name="fragment_home_recyclerview_margin_top">5dp</dimen>
     <dimen name="fragment_home_recyclerview_margin_bottom">5dp</dimen>
+    //searchView fragment_home
+    <dimen name="fragment_home_search_view_margin">8dp</dimen>
 
     //recyclerview fragment_favorites
     <dimen name="fragment_favorites_recyclerview_margin_start">16dp</dimen>
@@ -38,5 +40,9 @@
     <dimen name="film_item_text_view_padding">5dp</dimen>
     <dimen name="film_item_card_view_elevation">15dp</dimen>
     <dimen name="film_item_card_view_cornerradius">15dp</dimen>
+
+    //shape_fragment_home_search_background
+    <dimen name="shape_fragment_home_search_corner_radius">5dp</dimen>
+    <dimen name="shape_fragment_home_search_width">2dp</dimen>
 
 </resources>

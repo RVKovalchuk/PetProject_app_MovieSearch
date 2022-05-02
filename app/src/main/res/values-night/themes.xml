@@ -38,4 +38,8 @@
         <item name="colorPrimary">@color/grey_almost_white</item>
     </style>
 
+    <style name="Theme.MovieSearch.Search" parent="Theme.MovieSearch">
+        <item name="android:background">@drawable/shape_fragment_home_search_background_night</item>
+    </style>
+
 </resources>

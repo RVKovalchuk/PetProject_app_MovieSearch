@@ -3,6 +3,7 @@ package com.example.moviesearch
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextThemeWrapper
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.appbar.MaterialToolbar
@@ -37,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
 
     private fun initNavigation() {
         val topAppBar: MaterialToolbar = findViewById<MaterialToolbar>(R.id.top_app_bar_tool)

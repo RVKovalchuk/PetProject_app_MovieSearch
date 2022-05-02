@@ -37,4 +37,8 @@
         <item name="android:background">@color/white</item>
         <item name="colorPrimary">@color/black</item>
     </style>
+
+    <style name="Theme.MovieSearch.Search" parent="Theme.MovieSearch">
+        <item name="android:background">@drawable/shape_fragment_home_search_background_day</item>
+    </style>
 </resources>
