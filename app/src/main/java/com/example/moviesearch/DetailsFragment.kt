@@ -24,7 +24,7 @@ class DetailsFragment : Fragment() {
     }
 
     private fun setDetails() {
-        val film = arguments?.get("film") as Film
+        val film = arguments?.get(FILM_BUNDLE_KEY) as Film
         val fragmentDetailsButtonFavorites =
             view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_favorites)
         val fragmentDetailsButtonShare =
