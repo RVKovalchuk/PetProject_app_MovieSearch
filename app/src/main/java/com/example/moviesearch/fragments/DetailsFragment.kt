@@ -1,4 +1,4 @@
-package com.example.moviesearch
+package com.example.moviesearch.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.moviesearch.R
+import com.example.moviesearch.recyclerView.FILM_BUNDLE_KEY
+import com.example.moviesearch.recyclerView.Film
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_details.*
 
@@ -59,7 +62,6 @@ class DetailsFragment : Fragment() {
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, "Поделиться с: "))
         }
-
     }
 
 }

@@ -1,8 +1,9 @@
-package com.example.moviesearch
+package com.example.moviesearch.recyclerView
 
 import androidx.recyclerview.widget.DiffUtil
 
-class DiffUtil(private val oldList: List<Film>, private val newList: List<Film>) : DiffUtil.Callback() {
+class DiffUtil(private val oldList: List<Film>, private val newList: List<Film>) :
+    DiffUtil.Callback() {
     override fun getOldListSize() = oldList.size
 
     override fun getNewListSize() = newList.size
@@ -16,7 +17,6 @@ class DiffUtil(private val oldList: List<Film>, private val newList: List<Film>)
         val newFilm = newList[newItemPosition]
         return oldFilm.title == newFilm.title && oldFilm.description == newFilm.description && oldFilm.poster == newFilm.poster
     }
-
 
 
 }

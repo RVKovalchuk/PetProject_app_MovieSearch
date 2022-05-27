@@ -1,4 +1,4 @@
-package com.example.moviesearch
+package com.example.moviesearch.recyclerView
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

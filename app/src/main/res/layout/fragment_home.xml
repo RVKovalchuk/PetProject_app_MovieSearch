@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_home_root"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/text_menu_background"
-        android:theme="@style/Theme.MovieSearch.Background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:visibility="invisible"
+    tools:context=".fragments.HomeFragment"
+    tools:visibility="visible"
+    style="@style/Theme.MovieSearch.Background">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -30,8 +24,8 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways"
-                android:elevation="@dimen/film_item_card_view_elevation">
+                android:elevation="@dimen/film_item_card_view_elevation"
+                app:layout_scrollFlags="scroll|enterAlways">
 
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/fragment_home_search"
@@ -41,7 +35,9 @@
                     android:layout_margin="@dimen/fragment_home_search_view_margin"
                     android:imeOptions="actionSearch"
                     app:iconifiedByDefault="false" />
+
             </androidx.cardview.widget.CardView>
+
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.example.moviesearch
+package com.example.moviesearch.recyclerView
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

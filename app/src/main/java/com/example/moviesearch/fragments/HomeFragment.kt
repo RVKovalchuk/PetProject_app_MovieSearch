@@ -1,4 +1,4 @@
-package com.example.moviesearch
+package com.example.moviesearch.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.moviesearch.*
+import com.example.moviesearch.animation.AnimationHelper
+import com.example.moviesearch.recyclerView.DiffUtil
+import com.example.moviesearch.recyclerView.Film
+import com.example.moviesearch.recyclerView.FilmListRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
@@ -60,7 +65,6 @@ class HomeFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
     private var newList = listOf<Film>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -73,6 +77,9 @@ class HomeFragment : Fragment() {
         searchView(view)
         initRecyclerView()
         filmsAdapter.addItems(filmsDataBase)
+
+
+        AnimationHelper.performFragmentCircularRevealAnimation(fragment_home_root, requireActivity(), 4)
 
     }
 

@@ -2,4 +2,5 @@
 <resources>
     <string name="film_item_poster_description">poster</string>
     <string name="description_fab">description_fab</string>
+    <string name="title_menu_home">Домой</string>
 </resources>

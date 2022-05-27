@@ -5,17 +5,23 @@
         android:id="@+id/favorite"
         android:icon="@drawable/ic_menu_favorite"
         android:title="@string/title_menu_favorite"
-        app:showAsAction="withText"/>
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/watch_later"
         android:title="@string/title_menu_watch_later"
         android:icon="@drawable/ic_menu_watch_later"
-        app:showAsAction="withText"/>
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/selections"
         android:title="@string/title_menu_selections"
         android:icon="@drawable/ic_menu_selections"
-        app:showAsAction="withText"/>
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/title_menu_home"
+        android:icon="@drawable/ic_menu_home"
+        app:showAsAction="ifRoom"/>
 </menu>

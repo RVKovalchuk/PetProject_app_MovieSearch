@@ -43,6 +43,11 @@
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/ic_menu_favorite.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/ic_menu_search.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_dark.xml" value="0.1" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_favorite_light.xml" value="0.1195" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_home_light.xml" value="0.1195" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_light.xml" value="0.136" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_selections_light.xml" value="0.1195" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_background_watch_later_light.xml" value="0.1195" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_film_item_background_day.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_fragment_home_search_background.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/drawable/shape_fragment_home_search_background_day.xml" value="0.1385" />
@@ -53,8 +58,10 @@
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/film_item.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/fragment_details.xml" value="0.1" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/fragment_favorites.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/menu/menu_navigation.xml" value="0.1" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/fragment_selections.xml" value="0.21422101449275363" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/layout/fragment_watch_later.xml" value="0.21422101449275363" />
+        <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/menu/menu_navigation.xml" value="0.264" />
         <entry key="..\:/Users/M.Kovalek/AndroidStudioProjects/PetProject_app_MovieSearch/app/src/main/res/menu/menu_toolbar.xml" value="0.25416666666666665" />
       </map>
     </option>
