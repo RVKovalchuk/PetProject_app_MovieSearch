@@ -13,6 +13,11 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val COUNT_OF_BACKSTACK_ONE = 1
+private const val TAG_FAVORITE = "favorite"
+private const val TAG_HOME = "home"
+private const val TAG_WATCH_LATER = "watch later"
+private const val TAG_SELECTION = "selection"
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,31 +65,27 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
+        //переключение фрагментов по нажатию на кнопки Bottom bar
         bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.favorite -> {
-                    val tag = "favorite"
-                    val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment?: FavoritesFragment(), tag)
+                    val fragment = checkFragmentExistence(TAG_FAVORITE)
+                    changeFragment(fragment?: FavoritesFragment(), TAG_FAVORITE)
                     true
                 }
                 R.id.home -> {
-                    val tag = "home"
-                    val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment?: HomeFragment(), tag)
+                    val fragment = checkFragmentExistence(TAG_HOME)
+                    changeFragment(fragment?: HomeFragment(), TAG_HOME)
                     true
                 }
                 R.id.watch_later -> {
-                    val tag = "watch_later"
-                    val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment?: WatchLaterFragment(), tag)
+                    val fragment = checkFragmentExistence(TAG_WATCH_LATER)
+                    changeFragment(fragment?: WatchLaterFragment(), TAG_WATCH_LATER)
                     true
                 }
                 R.id.selections -> {
-                    val tag = "selections"
-                    val fragment = checkFragmentExistence(tag)
-                    changeFragment(fragment?: SelectionsFragment(), tag)
+                    val fragment = checkFragmentExistence(TAG_SELECTION)
+                    changeFragment(fragment?: SelectionsFragment(), TAG_SELECTION)
                     true
                 }
                 else -> false
