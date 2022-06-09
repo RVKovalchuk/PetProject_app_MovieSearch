@@ -50,6 +50,15 @@
             app:layout_constraintTop_toBottomOf="@id/film_item_title"
             style="@style/Theme.MovieSearch.Text"/>
 
+        <com.example.moviesearch.customView.RatingDonutView
+            android:id="@+id/film_item_rating"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:translationZ="11dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:stroke="8"
+            app:rating="100"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

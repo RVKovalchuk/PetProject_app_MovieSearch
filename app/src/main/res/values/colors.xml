@@ -24,4 +24,8 @@
     <color name="green">#3AB35D</color>
     <color name="green_light">#7DB58D</color>
 
+    <color name="red">#F82313</color>
+    <color name="orange">#FF5722</color>
+
+
 </resources>
