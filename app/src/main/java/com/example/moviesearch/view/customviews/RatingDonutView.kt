@@ -1,4 +1,4 @@
-package com.example.moviesearch.customView
+package com.example.moviesearch.view.customviews
 
 import android.content.Context
 import android.graphics.*

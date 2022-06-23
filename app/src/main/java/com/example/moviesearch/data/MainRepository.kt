@@ -1,21 +1,10 @@
-package com.example.moviesearch.fragments
+package com.example.moviesearch.data
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moviesearch.*
-import com.example.moviesearch.animation.AnimationHelper
-import com.example.moviesearch.recyclerView.DiffUtil
-import com.example.moviesearch.recyclerView.Film
-import com.example.moviesearch.recyclerView.FilmListRecyclerAdapter
-import kotlinx.android.synthetic.main.fragment_home.*
-import java.util.*
+import com.example.moviesearch.R
+import com.example.moviesearch.domain.Film
 
-class HomeFragment : Fragment() {
-    private var filmsDataBase = listOf(
+class MainRepository {
+    var filmsDataBase = listOf(
         Film(
             "Интерстеллар",
             R.drawable.poster_recyclerview_interstellar,
@@ -80,80 +69,4 @@ class HomeFragment : Fragment() {
             84
         )
     )
-    private lateinit var filmsAdapter: FilmListRecyclerAdapter
-    private var newList = listOf<Film>()
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        searchView(view)
-        initRecyclerView()
-        filmsAdapter.addItems(filmsDataBase)
-
-
-        AnimationHelper.performFragmentCircularRevealAnimation(
-            fragment_home_root,
-            requireActivity(),
-            4
-        )
-
-    }
-
-    private fun searchView(view: View) {
-        val search =
-            view.findViewById<androidx.appcompat.widget.SearchView>(R.id.fragment_home_search)
-        search.setOnQueryTextListener(object :
-            androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(newText: String?): Boolean {
-                search.clearFocus()
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return if (newText.isNullOrBlank()) {
-                    filmsAdapter.addItems(filmsDataBase)
-                    true
-                } else {
-                    val result = filmsDataBase.filter {
-                        it.title.lowercase(
-                            Locale.getDefault()
-                        ).contains(newText.lowercase(Locale.getDefault()))
-                    }
-                    filmsAdapter.addItems(result)
-                    true
-                }
-            }
-        })
-    }
-
-
-    private fun initRecyclerView() {
-        recycler_view.apply {
-            filmsAdapter =
-                FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
-                    override fun click(film: Film) {
-                        (requireActivity() as MainActivity).launchDetailsFragment(film)
-                    }
-                })
-
-            adapter = filmsAdapter
-            layoutManager = LinearLayoutManager(requireContext())
-
-            val decorator = TopSpacingItemDecoration(8)
-            addItemDecoration(decorator)
-
-        }
-        filmsAdapter.addItems(filmsDataBase)
-
-        val diff = DiffUtil(filmsDataBase, newList)
-        val diffResult = androidx.recyclerview.widget.DiffUtil.calculateDiff(diff)
-        newList = filmsDataBase
-        diffResult.dispatchUpdatesTo(filmsAdapter)
-    }
 }

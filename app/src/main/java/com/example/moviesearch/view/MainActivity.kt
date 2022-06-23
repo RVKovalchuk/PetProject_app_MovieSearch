@@ -1,4 +1,4 @@
-package com.example.moviesearch
+package com.example.moviesearch.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,10 @@ import android.view.ContextThemeWrapper
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
-import com.example.moviesearch.fragments.*
-import com.example.moviesearch.recyclerView.FILM_BUNDLE_KEY
-import com.example.moviesearch.recyclerView.Film
+import com.example.moviesearch.R
+import com.example.moviesearch.domain.FILM_BUNDLE_KEY
+import com.example.moviesearch.domain.Film
+import com.example.moviesearch.view.fragments.*
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -70,22 +71,22 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.favorite -> {
                     val fragment = checkFragmentExistence(TAG_FAVORITE)
-                    changeFragment(fragment?: FavoritesFragment(), TAG_FAVORITE)
+                    changeFragment(fragment ?: FavoritesFragment(), TAG_FAVORITE)
                     true
                 }
                 R.id.home -> {
                     val fragment = checkFragmentExistence(TAG_HOME)
-                    changeFragment(fragment?: HomeFragment(), TAG_HOME)
+                    changeFragment(fragment ?: HomeFragment(), TAG_HOME)
                     true
                 }
                 R.id.watch_later -> {
                     val fragment = checkFragmentExistence(TAG_WATCH_LATER)
-                    changeFragment(fragment?: WatchLaterFragment(), TAG_WATCH_LATER)
+                    changeFragment(fragment ?: WatchLaterFragment(), TAG_WATCH_LATER)
                     true
                 }
                 R.id.selections -> {
                     val fragment = checkFragmentExistence(TAG_SELECTION)
-                    changeFragment(fragment?: SelectionsFragment(), TAG_SELECTION)
+                    changeFragment(fragment ?: SelectionsFragment(), TAG_SELECTION)
                     true
                 }
                 else -> false
@@ -94,7 +95,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     //метод для проверки существования фрагмента
-    private fun checkFragmentExistence(tag : String) : Fragment? = supportFragmentManager.findFragmentByTag(tag)
+    private fun checkFragmentExistence(tag: String): Fragment? =
+        supportFragmentManager.findFragmentByTag(tag)
 
     //метод для замены фрагментов по нажатию кнопок нижнего меню
     private fun changeFragment(fragment: Fragment, tag: String) {

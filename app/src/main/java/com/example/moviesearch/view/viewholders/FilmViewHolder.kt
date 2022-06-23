@@ -1,8 +1,9 @@
-package com.example.moviesearch.recyclerView
+package com.example.moviesearch.view.viewholders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.moviesearch.domain.Film
 import kotlinx.android.synthetic.main.film_item.view.*
 
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,4 +1,4 @@
-package com.example.moviesearch.fragments
+package com.example.moviesearch.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.moviesearch.R
-import com.example.moviesearch.recyclerView.FILM_BUNDLE_KEY
-import com.example.moviesearch.recyclerView.Film
+import com.example.moviesearch.domain.FILM_BUNDLE_KEY
+import com.example.moviesearch.domain.Film
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_details.*
 
