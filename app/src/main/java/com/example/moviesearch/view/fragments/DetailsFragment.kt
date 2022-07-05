@@ -5,10 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.moviesearch.R
-import com.example.moviesearch.domain.FILM_BUNDLE_KEY
+import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.domain.Film
+import com.example.moviesearch.domain.FilmConstants
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_details.*
 
@@ -27,15 +31,23 @@ class DetailsFragment : Fragment() {
     }
 
     private fun setDetails() {
-        val film = arguments?.get(FILM_BUNDLE_KEY) as Film
+        val film = arguments?.get(FilmConstants.FILM_BUNDLE_KEY) as Film
         val fragmentDetailsButtonFavorites =
             view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_favorites)
         val fragmentDetailsButtonShare =
             view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_share)
-
+        val imageView = view?.findViewById<AppCompatImageView>(R.id.activity_details_poster)
         activity_details_toolbar.title = film.title
-        activity_details_poster.setImageResource(film.poster)
-        activity_details_textview.text = film.description
+        val textView = view?.findViewById<TextView>(R.id.activity_details_textview)
+
+        if (imageView != null) {
+            Glide.with(this)
+                .load(ApiConstants.IMAGE_URL + "w780" + film.poster)
+                .centerCrop()
+                .into(imageView)
+        }
+
+        textView?.text = film.description
 
         fragmentDetailsButtonFavorites?.setImageResource(
             if (film.isInFavorites) R.drawable.ic_fragment_details_favorite_yes

@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.moviesearch.R
-import com.example.moviesearch.domain.FILM_BUNDLE_KEY
 import com.example.moviesearch.domain.Film
+import com.example.moviesearch.domain.FilmConstants
 import com.example.moviesearch.view.fragments.*
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -18,7 +18,6 @@ private const val TAG_FAVORITE = "favorite"
 private const val TAG_HOME = "home"
 private const val TAG_WATCH_LATER = "watch later"
 private const val TAG_SELECTION = "selection"
-
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -117,7 +116,7 @@ class MainActivity : AppCompatActivity() {
 
     fun launchDetailsFragment(film: Film) {
         val bundle = Bundle()
-        bundle.putParcelable(FILM_BUNDLE_KEY, film)
+        bundle.putParcelable(FilmConstants.FILM_BUNDLE_KEY, film)
         val fragment = DetailsFragment()
         fragment.arguments = bundle
 
@@ -127,6 +126,7 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
 
 
 }

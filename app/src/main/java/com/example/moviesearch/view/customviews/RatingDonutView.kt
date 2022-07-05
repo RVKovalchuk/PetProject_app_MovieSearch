@@ -14,7 +14,7 @@ class RatingDonutView @JvmOverloads constructor(
     private var centerY: Float = 0f
     private var radius: Float = 0f
     private var stroke: Float = 10f
-    var rating = 50
+    var rating = 5
     private val scaleSize: Float = 60f
 
     private lateinit var strokePaint: Paint
