@@ -1,7 +1,6 @@
 package com.example.moviesearch
 
 import android.app.Application
-import com.example.moviesearch.data.MainRepository
 import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.data.api.TmbdApi
 import com.example.moviesearch.domain.Interactor
@@ -12,13 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class App : Application() {
-    lateinit var repository: MainRepository
     lateinit var interactor: Interactor
 
     override fun onCreate() {
         super.onCreate()
         instance = this
-        repository = MainRepository()
 
         val okHttpClient = OkHttpClient.Builder()
             .callTimeout(30, TimeUnit.SECONDS)
@@ -37,7 +34,7 @@ class App : Application() {
             .build()
 
         val retrofitService = retrofit.create(TmbdApi::class.java)
-        interactor = Interactor(repository, retrofitService)
+        interactor = Interactor(retrofitService)
     }
 
 

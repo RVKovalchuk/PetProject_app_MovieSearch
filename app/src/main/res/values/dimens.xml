@@ -8,10 +8,6 @@
 
 
     //fragment_home
-    <dimen name="fragment_home_cardview_height">120dp</dimen>
-    <dimen name="fragment_home_cardview_elevation">15dp</dimen>
-    <dimen name="fragment_home_cardview_cornerradius">15dp</dimen>
-    <dimen name="fragment_home_cardview_poster_width">90dp</dimen>
     //recyclerview fragment_home
     <dimen name="fragment_home_recyclerview_margin_start">16dp</dimen>
     <dimen name="fragment_home_recyclerview_margin_end">16dp</dimen>

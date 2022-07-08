@@ -6,8 +6,6 @@
     <string name="button_positive">Да</string>
     <string name="button_negative">Нет</string>
 
-    <string name="text_menu_background">Задний фон</string>
-
     //titles of menu buttons
     <string name="title_menu">Find a movie!</string>
     <string name="title_menu_settings">Настройки</string>
@@ -18,7 +16,6 @@
 
     //fragment_details FAB
     <string name="description_fab">description_fab</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_menu_home">Домой</string>
 
 </resources>

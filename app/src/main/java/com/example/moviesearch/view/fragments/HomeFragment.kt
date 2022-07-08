@@ -20,7 +20,6 @@ import java.util.*
 
 class HomeFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
-    private var newList = listOf<Film>()
 
     private val viewModel by lazy {
         ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
@@ -51,8 +50,11 @@ class HomeFragment : Fragment() {
             requireActivity(),
             4
         )
+
         viewModel.filmsListLiveData.observe(viewLifecycleOwner) {
             filmsDataBase = it
+            filmsAdapter.addItems(it)
+            print(it)
         }
     }
 
@@ -82,7 +84,6 @@ class HomeFragment : Fragment() {
             }
         })
     }
-
 
     private fun initRecyclerView() {
         recycler_view.apply {

@@ -16,16 +16,10 @@
     <color name="blue">#60AEEA</color>
 
     <color name="kiwi">#9abb01</color>
-    <color name="kiwi_light">#A6AF79</color>
 
     <color name="lavender">#a784ba</color>
-    <color name="lavender_light">#AEA2B5</color>
 
     <color name="green">#3AB35D</color>
-    <color name="green_light">#7DB58D</color>
-
-    <color name="red">#F82313</color>
-    <color name="orange">#FF5722</color>
 
 
 </resources>

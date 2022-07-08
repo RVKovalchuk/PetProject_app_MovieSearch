@@ -5,6 +5,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import com.example.moviesearch.R
+import kotlin.properties.Delegates
 
 class RatingDonutView @JvmOverloads constructor(
     context: Context,
@@ -14,8 +15,8 @@ class RatingDonutView @JvmOverloads constructor(
     private var centerY: Float = 0f
     private var radius: Float = 0f
     private var stroke: Float = 10f
-    var rating = 5
     private val scaleSize: Float = 60f
+    var rating: Double = 0.0
 
     private lateinit var strokePaint: Paint
     private lateinit var digitPaint: Paint
@@ -28,7 +29,7 @@ class RatingDonutView @JvmOverloads constructor(
             context.theme.obtainStyledAttributes(attributeSet, R.styleable.RatingDonutView, 0, 0)
         try {
             stroke = a.getFloat(R.styleable.RatingDonutView_stroke, stroke)
-            rating = a.getInt(R.styleable.RatingDonutView_rating, rating)
+            rating = a.getInt(R.styleable.RatingDonutView_rating, rating.toInt()).toDouble()
         } finally {
             a.recycle()
         }
@@ -62,10 +63,10 @@ class RatingDonutView @JvmOverloads constructor(
     }
 
     //метод для выбора соответствующего рейтингу цвета
-    private fun getPaintColor(rating: Int): Int = when (rating) {
-        in 0..25 -> Color.parseColor("#F82313")
-        in 26..50 -> Color.parseColor("#FF5722")
-        in 51..75 -> Color.parseColor("#9abb01")
+    private fun getPaintColor(rating: Double): Int = when (rating) {
+        in 0.0..2.5 -> Color.parseColor("#F82313")
+        in 2.6..5.0 -> Color.parseColor("#FF5722")
+        in 5.1..7.5 -> Color.parseColor("#9abb01")
         else -> Color.parseColor("#3AB35D")
     }
 
@@ -113,16 +114,16 @@ class RatingDonutView @JvmOverloads constructor(
     }
 
     //метод для конвертации рейтинга в градусы для отрисовки арки
-    private fun convertProgressToDegrees(rating: Int): Float = rating * 3.6f
+    private fun convertProgressToDegrees(rating: Double): Float = rating.toFloat() * 36f
 
     //метод для отрисовки текста - значения рейтинга
     private fun drawText(canvas: Canvas) {
-        val text = String.format("%.1f", rating / 10f)
+        val text = String.format("%.1f", rating * 1f)
         val widths = FloatArray(text.length)
         digitPaint.getTextWidths(text, widths)
         var advance = 0f
         for (width in widths) advance += width
-        canvas.drawText(text, centerX - advance/2, centerY + advance/5, digitPaint)
+        canvas.drawText(text, centerX - advance / 2, centerY + advance / 5, digitPaint)
     }
 
     override fun onDraw(canvas: Canvas) {

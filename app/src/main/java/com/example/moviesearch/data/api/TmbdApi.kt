@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface TmbdApi {
 
-    @GET("/movie/top_rated")
+    @GET("movie/popular")
     fun getFilmsInfo(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
