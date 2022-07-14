@@ -17,5 +17,4 @@
     //fragment_details FAB
     <string name="description_fab">description_fab</string>
     <string name="title_menu_home">Домой</string>
-
 </resources>

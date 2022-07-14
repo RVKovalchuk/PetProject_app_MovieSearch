@@ -18,8 +18,8 @@ class App : Application() {
         instance = this
 
         val okHttpClient = OkHttpClient.Builder()
-            .callTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .callTimeout(AppConstants.CALL_TIMEOUT, TimeUnit.SECONDS)
+            .readTimeout(AppConstants.READ_TIMEOUT, TimeUnit.SECONDS)
             .addInterceptor(HttpLoggingInterceptor().apply {
                 if (BuildConfig.DEBUG) {
                     level = HttpLoggingInterceptor.Level.BASIC

@@ -1,7 +1,5 @@
 package com.example.moviesearch.domain
 
-import android.util.Log
-import com.example.moviesearch.data.MainRepository
 import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.data.api.TmbdApi
 import com.example.moviesearch.data.api.TmbdResultsDto

@@ -12,7 +12,7 @@ object AnimationHelper {
     private const val HALF_PARTS_OF_ITEM = 2
     private const val PREVIOUS_POSITION_OF_ITEM = 1
     private const val START_RADIUS_OF_CIRCULAR_REVEAL = 0
-    private const val DURATION_OF_CIRCULAR_REVEAL : Long = 250
+    private const val DURATION_OF_CIRCULAR_REVEAL = 250L
 
 
     //метод для создания круговой анимации появления фрагментов
