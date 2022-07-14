@@ -1,5 +1,6 @@
 package com.example.moviesearch.domain
 
+import com.example.moviesearch.data.MainRepository
 import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.data.api.TmbdApi
 import com.example.moviesearch.data.api.TmbdResultsDto
@@ -9,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Interactor(private val service: TmbdApi) {
+class Interactor(private val repository: MainRepository, private val service: TmbdApi) {
 
     fun getFilmsFromApi(page: Int, callback: HomeFragmentViewModel.ApiCallback) {
         service.getFilmsInfo(ApiConstants.API_KEY, "ru-RU", page).enqueue(object :
