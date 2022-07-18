@@ -3,14 +3,12 @@ package com.example.moviesearch.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextThemeWrapper
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.moviesearch.R
 import com.example.moviesearch.domain.Film
 import com.example.moviesearch.domain.FilmConstants
 import com.example.moviesearch.view.fragments.*
-import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val COUNT_OF_BACKSTACK_ONE = 1
@@ -52,19 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        val topAppBar: MaterialToolbar = findViewById<MaterialToolbar>(R.id.top_app_bar_tool)
         val bottomBar: BottomNavigationView =
             findViewById<BottomNavigationView>(R.id.bottom_app_bar)
 
-        topAppBar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.settings -> {
-                    Toast.makeText(this, R.string.title_menu_settings, Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
-        }
         //переключение фрагментов по нажатию на кнопки Bottom bar
         bottomBar.setOnItemSelectedListener {
             when (it.itemId) {
