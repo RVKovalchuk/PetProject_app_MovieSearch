@@ -8,22 +8,23 @@
     app:cardCornerRadius="@dimen/film_item_card_view_cornerradius">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Theme.MovieSearch.FilmItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Theme.MovieSearch.FilmItem">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/film_item_poster"
             android:layout_width="@dimen/film_item_view_width"
             android:layout_height="@dimen/film_item_view_height"
-            android:layout_margin="@dimen/film_item_view_margin"
             android:contentDescription="@string/film_item_poster_description"
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/film_item_title"
+            style="@style/Theme.MovieSearch.Text"
             android:layout_width="@dimen/zero_dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -34,31 +35,31 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/film_item_poster"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/Theme.MovieSearch.Text"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/film_item_description"
+            style="@style/Theme.MovieSearch.Text"
             android:layout_width="@dimen/zero_dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="7"
-            android:padding="@dimen/film_item_text_view_padding"
+            android:paddingStart="@dimen/film_item_text_view_padding"
+            android:paddingEnd="@dimen/film_item_text_view_padding"
             android:textSize="@dimen/description_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/film_item_poster"
-            app:layout_constraintTop_toBottomOf="@id/film_item_title"
-            style="@style/Theme.MovieSearch.Text"/>
+            app:layout_constraintTop_toBottomOf="@id/film_item_title" />
 
         <com.example.moviesearch.view.customviews.RatingDonutView
             android:id="@+id/film_item_rating"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:translationZ="11dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:stroke="8"
-            app:rating="100"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:rating="100"
+            app:stroke="8" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
