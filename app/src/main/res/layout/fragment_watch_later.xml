@@ -11,7 +11,6 @@
     tools:visibility="invisible">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragment_favorites_recycler_view"
         android:layout_height="@dimen/zero_dp"
         android:layout_width="@dimen/zero_dp"
         android:layout_marginStart="@dimen/fragment_favorites_recyclerview_margin_start"
