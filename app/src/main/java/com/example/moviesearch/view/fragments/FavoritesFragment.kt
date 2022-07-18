@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.moviesearch.R
 import com.example.moviesearch.utils.AnimationHelper
-import kotlinx.android.synthetic.main.fragment_favorites.*
 
 
 class FavoritesFragment : Fragment() {
@@ -21,8 +21,9 @@ class FavoritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val fragmentRoot = view.findViewById<ConstraintLayout>(R.id.favorite_fragment_root)
         AnimationHelper.performFragmentCircularRevealAnimation(
-            favorite_fragment_root,
+            fragmentRoot,
             requireActivity(),
             1
         )

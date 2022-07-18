@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.moviesearch.R
 import com.example.moviesearch.utils.AnimationHelper
-import kotlinx.android.synthetic.main.fragment_watch_later.*
 
 
 class WatchLaterFragment : Fragment() {
@@ -21,8 +21,9 @@ class WatchLaterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val fragmentRoot = view.findViewById<ConstraintLayout>(R.id.watch_later_fragment_root)
         AnimationHelper.performFragmentCircularRevealAnimation(
-            watch_later_fragment_root,
+            fragmentRoot,
             requireActivity(),
             2
         )

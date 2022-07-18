@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.moviesearch.R
@@ -14,7 +15,6 @@ import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.domain.Film
 import com.example.moviesearch.domain.FilmConstants
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment : Fragment() {
 
@@ -37,8 +37,9 @@ class DetailsFragment : Fragment() {
         val fragmentDetailsButtonShare =
             view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_share)
         val imageView = view?.findViewById<AppCompatImageView>(R.id.activity_details_poster)
-        activity_details_toolbar.title = film.title
+        val toolbar = view?.findViewById<Toolbar>(R.id.activity_details_toolbar)
         val textView = view?.findViewById<TextView>(R.id.activity_details_textview)
+        toolbar?.title = film.title
 
         if (imageView != null) {
             Glide.with(this)

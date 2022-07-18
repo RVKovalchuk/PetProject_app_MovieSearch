@@ -1,17 +1,20 @@
 package com.example.moviesearch.view.viewholders
 
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.moviesearch.R
 import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.domain.Film
-import kotlinx.android.synthetic.main.film_item.view.*
+import com.example.moviesearch.view.customviews.RatingDonutView
 
 class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val title = itemView.film_item_title
-    private val description = itemView.film_item_description
-    private val poster = itemView.film_item_poster
-    private val ratingDonut = itemView.film_item_rating
+    private val title = itemView.findViewById<TextView>(R.id.film_item_title)
+    private val description = itemView.findViewById<TextView>(R.id.film_item_description)
+    private val poster = itemView.findViewById<ImageView>(R.id.film_item_poster)
+    private val ratingDonut = itemView.findViewById<RatingDonutView>(R.id.film_item_rating)
 
     fun bind(film: Film) {
         title.text = film.title
@@ -22,7 +25,6 @@ class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             .into(poster)
 
         description.text = film.description
-
         ratingDonut.rating = film.rating
     }
 }

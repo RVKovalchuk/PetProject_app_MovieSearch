@@ -5,9 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesearch.*
 import com.example.moviesearch.domain.Film
 import com.example.moviesearch.utils.AnimationHelper
@@ -15,7 +16,6 @@ import com.example.moviesearch.view.MainActivity
 import com.example.moviesearch.view.adapters.FilmListRecyclerAdapter
 import com.example.moviesearch.view.adapters.TopSpacingItemDecoration
 import com.example.moviesearch.viewmodel.HomeFragmentViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
 
 class HomeFragment : Fragment() {
@@ -41,12 +41,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val fragmentRoot = view.findViewById<ConstraintLayout>(R.id.fragment_home_root)
+
         searchView(view)
         initRecyclerView()
         filmsAdapter.addItems(filmsDataBase)
 
         AnimationHelper.performFragmentCircularRevealAnimation(
-            fragment_home_root,
+            fragmentRoot,
             requireActivity(),
             4
         )
@@ -86,7 +88,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        recycler_view.apply {
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView?.apply {
             filmsAdapter =
                 FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
                     override fun click(film: Film) {
