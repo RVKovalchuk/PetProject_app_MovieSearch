@@ -1,6 +1,8 @@
 package com.example.moviesearch.di.modules
 
+import android.content.Context
 import com.example.moviesearch.data.MainRepository
+import com.example.moviesearch.data.db.DbHelper
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -9,5 +11,9 @@ import javax.inject.Singleton
 class DatabaseModule {
     @Provides
     @Singleton
-    fun provideRepository() = MainRepository()
+    fun provideDbHelper(context: Context) = DbHelper(context = context)
+
+    @Provides
+    @Singleton
+    fun provideRepository(dbHelper: DbHelper) = MainRepository(dbHelper = dbHelper)
 }

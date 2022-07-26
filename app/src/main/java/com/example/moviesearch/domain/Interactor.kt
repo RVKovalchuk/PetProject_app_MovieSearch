@@ -19,7 +19,11 @@ class Interactor(private val repository: MainRepository, private val service: Tm
                 call: Call<TmbdResultsDto>,
                 response: Response<TmbdResultsDto>
             ) {
-                callback.onSuccess(ConverterFromTmdbToFilm.convertFromTmbdToFilm(response.body()?.results))
+                val list = ConverterFromTmdbToFilm.convertFromTmbdToFilm(response.body()?.results)
+                list.forEach {
+                    repository.putToDb(it)
+                }
+                callback.onSuccess(list)
             }
 
             override fun onFailure(call: Call<TmbdResultsDto>, t: Throwable) {
@@ -28,4 +32,6 @@ class Interactor(private val repository: MainRepository, private val service: Tm
 
         })
     }
+
+    fun getFilmsFromDB() : List<Film> = repository.getAllFilmsFromDb()
 }
