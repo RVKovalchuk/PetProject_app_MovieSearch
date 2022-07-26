@@ -6,11 +6,12 @@ import com.example.moviesearch.di.AppComponent
 class App : Application() {
     lateinit var dagger: AppComponent
 
+
     override fun onCreate() {
         super.onCreate()
         instance = this
 
-        dagger = DaggerAppComponent.create()
+       dagger = DaggerAppComponent.create()
     }
 
 

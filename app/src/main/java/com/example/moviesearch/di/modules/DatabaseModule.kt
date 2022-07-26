@@ -9,11 +9,11 @@ import javax.inject.Singleton
 
 @Module
 class DatabaseModule {
-    @Provides
     @Singleton
-    fun provideDbHelper(context: Context) = DbHelper(context = context)
+    @Provides
+    fun provideDbHelper(context: Context) = DbHelper(context)
 
     @Provides
     @Singleton
-    fun provideRepository(dbHelper: DbHelper) = MainRepository(dbHelper = dbHelper)
+    fun provideRepository(dbHelper: DbHelper) = MainRepository(dbHelper)
 }
