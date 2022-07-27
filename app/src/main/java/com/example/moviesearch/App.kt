@@ -2,6 +2,7 @@ package com.example.moviesearch
 
 import android.app.Application
 import com.example.moviesearch.di.AppComponent
+import com.example.moviesearch.di.DaggerAppComponent
 
 class App : Application() {
     lateinit var dagger: AppComponent
@@ -11,7 +12,7 @@ class App : Application() {
         super.onCreate()
         instance = this
 
-       dagger = DaggerAppComponent.create()
+        dagger = DaggerAppComponent.factory().create(this)
     }
 
 

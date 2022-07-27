@@ -1,7 +1,7 @@
 package com.example.moviesearch.domain
 
 import com.example.moviesearch.data.MainRepository
-import com.example.moviesearch.data.api.ApiConstants
+import com.example.moviesearch.data.api.ApiConstants.API_KEY
 import com.example.moviesearch.data.api.TmbdApi
 import com.example.moviesearch.data.api.TmbdResultsDto
 import com.example.moviesearch.utils.ConverterFromTmdbToFilm
@@ -10,10 +10,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Interactor(private val repository: MainRepository, private val service: TmbdApi) {
+class Interactor(private val repository: MainRepository, private val service: TmbdApi/*, private val preferences: PreferencesProvider*/) {
 
     fun getFilmsFromApi(page: Int, callback: HomeFragmentViewModel.ApiCallback) {
-        service.getFilmsInfo(ApiConstants.API_KEY, "ru-RU", page).enqueue(object :
+        service.getFilmsInfo(/*getDefaultCategoryFromPreferences(),*/ API_KEY, "ru-RU", page).enqueue(object :
             Callback<TmbdResultsDto> {
             override fun onResponse(
                 call: Call<TmbdResultsDto>,
@@ -34,4 +34,10 @@ class Interactor(private val repository: MainRepository, private val service: Tm
     }
 
     fun getFilmsFromDB() : List<Film> = repository.getAllFilmsFromDb()
+/*
+    fun getDefaultCategoryFromPreferences() = preferences.getCategory()
+
+    fun saveDefaultCategoryToPreferences(category: String) {
+        preferences.saveDefaultCategory(category)
+    }*/
 }
