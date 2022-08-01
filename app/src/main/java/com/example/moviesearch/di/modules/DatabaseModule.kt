@@ -1,10 +1,10 @@
 package com.example.moviesearch.di.modules
 
 import android.content.Context
+import androidx.room.Room
 import com.example.moviesearch.data.MainRepository
-import com.example.moviesearch.data.db.DbHelper
-import dagger.BindsInstance
-import dagger.Component
+import com.example.moviesearch.data.dataAccessObject.FilmDataAccessObject
+import com.example.moviesearch.data.db.AppDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -13,9 +13,14 @@ import javax.inject.Singleton
 class DatabaseModule {
     @Singleton
     @Provides
-    fun provideDbHelper(context: Context) = DbHelper(context)
+    fun provideFilmDao(context: Context) = Room.databaseBuilder(
+        context,
+        AppDatabase::class.java,
+        "film_db"
+    ).build().filmDataAccessObject()
 
     @Provides
     @Singleton
-    fun provideRepository(dbHelper: DbHelper) = MainRepository(dbHelper)
+    fun provideRepository(filmDataAccessObject: FilmDataAccessObject) =
+        MainRepository(filmDataAccessObject = filmDataAccessObject)
 }

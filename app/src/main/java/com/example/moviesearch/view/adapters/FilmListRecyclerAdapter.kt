@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesearch.R
-import com.example.moviesearch.domain.Film
+import com.example.moviesearch.data.entity.Film
 import com.example.moviesearch.view.viewholders.FilmViewHolder
 
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) :

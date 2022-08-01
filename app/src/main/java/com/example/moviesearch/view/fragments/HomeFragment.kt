@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesearch.*
-import com.example.moviesearch.domain.Film
+import com.example.moviesearch.data.entity.Film
 import com.example.moviesearch.utils.AnimationHelper
 import com.example.moviesearch.view.MainActivity
 import com.example.moviesearch.view.adapters.FilmListRecyclerAdapter

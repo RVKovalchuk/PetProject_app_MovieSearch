@@ -1,7 +1,7 @@
 package com.example.moviesearch.utils
 
 import com.example.moviesearch.data.api.TmbdFilmCard
-import com.example.moviesearch.domain.Film
+import com.example.moviesearch.data.entity.Film
 
 object ConverterFromTmdbToFilm {
     fun convertFromTmbdToFilm(list: List<TmbdFilmCard>?): List<Film> {

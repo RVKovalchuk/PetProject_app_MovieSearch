@@ -6,8 +6,8 @@ import android.view.ContextThemeWrapper
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.moviesearch.R
-import com.example.moviesearch.domain.Film
-import com.example.moviesearch.domain.FilmConstants
+import com.example.moviesearch.data.entity.Film
+import com.example.moviesearch.data.entity.FilmConstants
 import com.example.moviesearch.view.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

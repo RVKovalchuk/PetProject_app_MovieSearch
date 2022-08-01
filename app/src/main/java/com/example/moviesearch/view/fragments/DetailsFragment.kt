@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.moviesearch.R
 import com.example.moviesearch.data.api.ApiConstants
-import com.example.moviesearch.domain.Film
-import com.example.moviesearch.domain.FilmConstants
+import com.example.moviesearch.data.entity.Film
+import com.example.moviesearch.data.entity.FilmConstants
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailsFragment : Fragment() {
