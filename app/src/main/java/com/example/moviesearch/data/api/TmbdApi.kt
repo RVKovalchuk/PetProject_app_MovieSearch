@@ -9,7 +9,6 @@ interface TmbdApi {
 
     @GET("movie/popular")
     fun getFilmsInfo(
-        /*@Path("category") category: String,*/
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int

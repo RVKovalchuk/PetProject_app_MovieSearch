@@ -13,11 +13,11 @@ import retrofit2.Response
 
 class Interactor(
     private val repository: MainRepository,
-    private val service: TmbdApi/*, private val preferences: PreferencesProvider*/
+    private val service: TmbdApi
 ) {
 
     fun getFilmsFromApi(page: Int, callback: HomeFragmentViewModel.ApiCallback) {
-        service.getFilmsInfo(/*getDefaultCategoryFromPreferences(),*/ API_KEY, "ru-RU", page)
+        service.getFilmsInfo( API_KEY, "ru-RU", page)
             .enqueue(object :
                 Callback<TmbdResultsDto> {
                 override fun onResponse(
@@ -38,10 +38,4 @@ class Interactor(
     }
 
     fun getFilmsFromDB(): List<Film> = repository.getAllFilmsFromDb()
-/*
-    fun getDefaultCategoryFromPreferences() = preferences.getCategory()
-
-    fun saveDefaultCategoryToPreferences(category: String) {
-        preferences.saveDefaultCategory(category)
-    }*/
 }
