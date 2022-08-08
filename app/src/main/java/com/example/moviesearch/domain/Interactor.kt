@@ -1,5 +1,6 @@
 package com.example.moviesearch.domain
 
+import androidx.lifecycle.LiveData
 import com.example.moviesearch.data.MainRepository
 import com.example.moviesearch.data.api.ApiConstants.API_KEY
 import com.example.moviesearch.data.api.TmbdApi
@@ -27,7 +28,7 @@ class Interactor(
                     val list =
                         ConverterFromTmdbToFilm.convertFromTmbdToFilm(response.body()?.results)
                     repository.putToDb(list)
-                    callback.onSuccess(list)
+                    callback.onSuccess()
                 }
 
                 override fun onFailure(call: Call<TmbdResultsDto>, t: Throwable) {
@@ -37,5 +38,5 @@ class Interactor(
             })
     }
 
-    fun getFilmsFromDB(): List<Film> = repository.getAllFilmsFromDb()
+    fun getFilmsFromDB(): LiveData<List<Film>> = repository.getAllFilmsFromDb()
 }
