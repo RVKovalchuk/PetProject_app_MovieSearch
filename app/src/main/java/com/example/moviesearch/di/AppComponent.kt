@@ -19,6 +19,7 @@ interface AppComponent {
     interface Factory{
         fun create(@BindsInstance context: Context) : AppComponent
     }
+
     fun inject(homeFragmentViewModel: HomeFragmentViewModel)
 }
 

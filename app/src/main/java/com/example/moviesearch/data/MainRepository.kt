@@ -1,8 +1,8 @@
 package com.example.moviesearch.data
 
-import androidx.lifecycle.LiveData
 import com.example.moviesearch.data.dataAccessObject.FilmDataAccessObject
 import com.example.moviesearch.data.entity.Film
+import io.reactivex.rxjava3.core.Observable
 import java.util.concurrent.Executors
 
 class MainRepository(private val filmDataAccessObject: FilmDataAccessObject) {
@@ -13,7 +13,7 @@ class MainRepository(private val filmDataAccessObject: FilmDataAccessObject) {
         }
     }
 
-    fun getAllFilmsFromDb(): LiveData<List<Film>> {
+    fun getAllFilmsFromDb(): Observable<List<Film>> {
         return filmDataAccessObject.getCashedFilms()
     }
 }

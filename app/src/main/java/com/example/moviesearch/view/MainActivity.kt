@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             super.onBackPressed()
         }
-
     }
 
     private fun initNavigation() {

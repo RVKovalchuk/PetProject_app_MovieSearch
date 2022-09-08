@@ -15,10 +15,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moviesearch.*
 import com.example.moviesearch.data.entity.Film
 import com.example.moviesearch.utils.AnimationHelper
+import com.example.moviesearch.utils.AutoDisposable
+import com.example.moviesearch.utils.addTo
 import com.example.moviesearch.view.MainActivity
 import com.example.moviesearch.view.adapters.FilmListRecyclerAdapter
 import com.example.moviesearch.view.adapters.TopSpacingItemDecoration
 import com.example.moviesearch.viewmodel.HomeFragmentViewModel
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.*
 
 class HomeFragment : Fragment() {
@@ -27,6 +31,8 @@ class HomeFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
     }
+
+    private val autoDisposable = AutoDisposable()
 
     private var filmsDataBase = listOf<Film>()
         set(value) {
@@ -39,6 +45,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        autoDisposable.bindTo(lifecycle)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -56,16 +63,26 @@ class HomeFragment : Fragment() {
             4
         )
 
-        viewModel.filmsListLiveData.observe(viewLifecycleOwner) {
-            filmsDataBase = it
-            filmsAdapter.addItems(it)
-            print(it)
-        }
+        viewModel.filmsListData
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                filmsAdapter.addItems(list = it)
+                filmsDataBase = it
+            }
+            .addTo(autoDisposable = autoDisposable)
 
-        viewModel.showProgressBar.observe(viewLifecycleOwner, Observer<Boolean>{
-            val progressBar = view.findViewById<ProgressBar>(R.id.fragment_home_progress_bar)
-            progressBar.isVisible = it
-        })
+
+        val progressBar = view.findViewById<ProgressBar>(R.id.fragment_home_progress_bar)
+
+        viewModel.showProgressBar
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                progressBar.isVisible = it
+            }
+            .addTo(autoDisposable = autoDisposable)
+
     }
 
     private fun searchView(view: View) {
