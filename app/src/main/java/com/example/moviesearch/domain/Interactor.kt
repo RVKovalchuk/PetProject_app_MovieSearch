@@ -46,4 +46,10 @@ class Interactor(
     }
 
     fun getFilmsFromDB(): Observable<List<Film>> = repository.getAllFilmsFromDb()
+
+    fun getSearchResultFromApi(search: String): Observable<List<Film>> =
+        service.getFilmsFromSearch(API_KEY, "ru-RU", search, 1)
+            .map {
+                ConverterFromTmdbToFilm.convertFromTmbdToFilm(it.results)
+            }
 }

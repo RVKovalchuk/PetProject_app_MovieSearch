@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
@@ -22,8 +23,12 @@ import com.example.moviesearch.view.adapters.FilmListRecyclerAdapter
 import com.example.moviesearch.view.adapters.TopSpacingItemDecoration
 import com.example.moviesearch.viewmodel.HomeFragmentViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.ObservableOnSubscribe
+import io.reactivex.rxjava3.kotlin.subscribeBy
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class HomeFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
@@ -88,28 +93,45 @@ class HomeFragment : Fragment() {
     private fun searchView(view: View) {
         val search =
             view.findViewById<androidx.appcompat.widget.SearchView>(R.id.fragment_home_search)
-        search.setOnQueryTextListener(object :
-            androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(newText: String?): Boolean {
-                search.clearFocus()
-                return true
-            }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return if (newText.isNullOrBlank()) {
-                    filmsAdapter.addItems(filmsDataBase)
-                    true
-                } else {
-                    val result = filmsDataBase.filter {
-                        it.title.lowercase(
-                            Locale.getDefault()
-                        ).contains(newText.lowercase(Locale.getDefault()))
-                    }
-                    filmsAdapter.addItems(result)
-                    true
+        Observable.create(ObservableOnSubscribe<String> { subscriber ->
+            search.setOnQueryTextListener(object :
+                androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(newText: String): Boolean {
+                    subscriber.onNext(newText)
+                    return false
                 }
-            }
+
+                override fun onQueryTextChange(newText: String): Boolean {
+                    filmsAdapter.items.clear()
+                    subscriber.onNext(newText)
+                    return false
+                }
+            })
         })
+            .subscribeOn(Schedulers.io())
+            .map {
+                it.lowercase(Locale.getDefault()).trim()
+            }
+            .debounce(1, TimeUnit.SECONDS)
+            .filter {
+                viewModel.getFilms()
+                it.isNotBlank()
+            }
+            .flatMap {
+                viewModel.getSearchResult(it)
+            }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeBy(
+                onError = {
+                    Toast.makeText(requireContext(), "onError position", Toast.LENGTH_SHORT).show()
+                },
+                onNext = {
+                    filmsAdapter.addItems(it)
+                })
+            .addTo(autoDisposable)
+
     }
 
     private fun initRecyclerView() {

@@ -13,7 +13,7 @@ class HomeFragmentViewModel : ViewModel() {
     lateinit var interactor: Interactor
 
     val filmsListData: Observable<List<Film>>
-    val showProgressBar : BehaviorSubject<Boolean>
+    val showProgressBar: BehaviorSubject<Boolean>
 
     init {
         App.instance.dagger.inject(this)
@@ -22,8 +22,10 @@ class HomeFragmentViewModel : ViewModel() {
         getFilms()
     }
 
-    private fun getFilms() {
+    fun getFilms() {
         interactor.getFilmsFromApi(1)
     }
+
+    fun getSearchResult(search: String) = interactor.getSearchResultFromApi(search = search)
 
 }

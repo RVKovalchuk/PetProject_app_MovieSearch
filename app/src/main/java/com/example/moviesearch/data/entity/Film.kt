@@ -14,7 +14,7 @@ import kotlinx.parcelize.Parcelize
 data class Film(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "title") val title: String,
-    @ColumnInfo(name = "poster_path") val poster: String,
+    @ColumnInfo(name = "poster_path") val poster: String?,
     @ColumnInfo(name = "description") val description: String,
     var isInFavorites: Boolean = false,
     @ColumnInfo(name = "vote_average") val rating: Double = 0.0

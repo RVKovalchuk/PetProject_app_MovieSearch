@@ -6,6 +6,7 @@ import com.example.moviesearch.data.api.ApiConstants
 import com.example.moviesearch.data.api.TmbdApi
 import dagger.Module
 import dagger.Provides
+import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,7 +18,7 @@ import javax.inject.Singleton
 class RemoteModule {
     @Provides
     @Singleton
-    fun provideOkHttpClient() : OkHttpClient = OkHttpClient.Builder()
+    fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
         .callTimeout(AppConstants.CALL_TIMEOUT, TimeUnit.SECONDS)
         .readTimeout(AppConstants.READ_TIMEOUT, TimeUnit.SECONDS)
         .addInterceptor(HttpLoggingInterceptor().apply {
@@ -29,13 +30,14 @@ class RemoteModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient) : Retrofit = Retrofit.Builder()
+    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl(ApiConstants.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .client(okHttpClient)
         .build()
 
     @Provides
     @Singleton
-    fun provideTmbdApi(retrofit: Retrofit) : TmbdApi = retrofit.create(TmbdApi::class.java)
+    fun provideTmbdApi(retrofit: Retrofit): TmbdApi = retrofit.create(TmbdApi::class.java)
 }
