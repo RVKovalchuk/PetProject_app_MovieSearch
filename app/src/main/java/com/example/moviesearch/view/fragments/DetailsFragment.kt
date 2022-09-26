@@ -8,7 +8,6 @@ import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.Gravity.apply
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,19 +17,16 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.GravityCompat.apply
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.domain.ApiConstants
+import com.example.domain.Film
 import com.example.moviesearch.R
-import com.example.moviesearch.data.api.ApiConstants
-import com.example.moviesearch.data.entity.Film
 import com.example.moviesearch.data.entity.FilmConstants
 import com.example.moviesearch.viewmodel.DetailsFragmentViewModel
-import com.example.moviesearch.viewmodel.HomeFragmentViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
 
 class DetailsFragment : Fragment() {
@@ -71,10 +67,10 @@ class DetailsFragment : Fragment() {
     private fun saveToGallery(bitmap: Bitmap) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             val contentValues = ContentValues().apply {
-                put(MediaStore.Images.Media.TITLE, film.title.handleSingleQuote())
+                put(MediaStore.Images.Media.TITLE, film.title?.handleSingleQuote())
                 put(
                     MediaStore.Images.Media.DISPLAY_NAME,
-                    film.title.handleSingleQuote()
+                    film.title?.handleSingleQuote()
                 )
                 put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
                 put(
@@ -96,8 +92,8 @@ class DetailsFragment : Fragment() {
             MediaStore.Images.Media.insertImage(
                 requireActivity().contentResolver,
                 bitmap,
-                film.title.handleSingleQuote(),
-                film.description.handleSingleQuote()
+                film.title?.handleSingleQuote(),
+                film.description?.handleSingleQuote()
             )
         }
     }

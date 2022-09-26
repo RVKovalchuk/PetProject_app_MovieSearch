@@ -18,6 +18,9 @@ class RatingDonutView @JvmOverloads constructor(
     private val scaleSize: Float = 60f
     var rating: Double = 0.0
 
+    var staticBitmap: Bitmap? = null
+    var staticCanvas: Canvas? = null
+
     private lateinit var strokePaint: Paint
     private lateinit var digitPaint: Paint
     private lateinit var circlePaint: Paint
@@ -108,6 +111,7 @@ class RatingDonutView @JvmOverloads constructor(
         canvas.save()
         canvas.translate(centerX, centerY)
         oval.set(0f - scale, 0f - scale, scale, scale)
+        strokePaint.color = getPaintColor(rating)
         canvas.drawCircle(0f, 0f, radius, circlePaint)
         canvas.drawArc(oval, -90f, convertProgressToDegrees(rating), false, strokePaint)
         canvas.restore()
@@ -120,13 +124,28 @@ class RatingDonutView @JvmOverloads constructor(
     private fun drawText(canvas: Canvas) {
         val text = String.format("%.1f", rating * 1f)
         val widths = FloatArray(text.length)
+        digitPaint.color = getPaintColor(rating)
         digitPaint.getTextWidths(text, widths)
         var advance = 0f
         for (width in widths) advance += width
         canvas.drawText(text, centerX - advance / 2, centerY + advance / 5, digitPaint)
     }
 
+    private fun drawStaticBitmap() {
+        staticBitmap = Bitmap.createBitmap(
+            (centerX * 2).toInt(),
+            (centerY * 2).toInt(),
+            Bitmap.Config.ARGB_8888
+        )
+        staticCanvas = Canvas(staticBitmap!!)
+        staticCanvas!!.drawCircle(centerX, centerY, radius, circlePaint)
+    }
+
     override fun onDraw(canvas: Canvas) {
+        if (staticCanvas == null) {
+            drawStaticBitmap()
+        }
+        canvas.drawBitmap(staticBitmap!!, 0f, 0f, null)
         drawRating(canvas)
         drawText(canvas)
     }

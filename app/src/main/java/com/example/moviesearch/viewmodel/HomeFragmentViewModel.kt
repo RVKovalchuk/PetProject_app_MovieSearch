@@ -1,8 +1,8 @@
 package com.example.moviesearch.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.domain.Film
 import com.example.moviesearch.App
-import com.example.moviesearch.data.entity.Film
 import com.example.moviesearch.domain.Interactor
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.BehaviorSubject
@@ -13,11 +13,9 @@ class HomeFragmentViewModel : ViewModel() {
     lateinit var interactor: Interactor
 
     val filmsListData: Observable<List<Film>>
-    val showProgressBar: BehaviorSubject<Boolean>
 
     init {
         App.instance.dagger.inject(this)
-        showProgressBar = interactor.progressBarState
         filmsListData = interactor.getFilmsFromDB()
         getFilms()
     }

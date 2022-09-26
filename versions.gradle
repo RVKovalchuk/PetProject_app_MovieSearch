@@ -1,0 +1,24 @@
+ext {
+    daggerVersion = '2.43.2'
+    roomVersion = '2.4.3'
+    rxAndroidVersion = '3.0.0'
+    rxJavaVersion = '3.0.10'
+    rxKotlinVersion = '3.0.1'
+    rxRoomVersion = '2.3.0-beta02'
+
+    //Room
+    room = "androidx.room:room-runtime:$roomVersion"
+    roomCompiler = "androidx.room:room-compiler:$roomVersion"
+
+    //Dagger 2
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    //RxJava
+    rxAndroid = "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion"
+    rxJava = "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+    rxKotlin = "io.reactivex.rxjava3:rxkotlin:$rxKotlinVersion"
+
+    //RxJava + Room
+    rxRoom = "androidx.room:room-rxjava3:$rxRoomVersion"
+}

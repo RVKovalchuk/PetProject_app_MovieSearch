@@ -37,13 +37,15 @@ android {
 }
 
 dependencies {
+    implementation(project(':domains'))
+    implementation(project(':core'))
 //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     implementation 'androidx.preference:preference:1.2.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -67,16 +69,11 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.42'
     kapt 'com.google.dagger:dagger-compiler:2.42'
 
-    //Room
-    implementation "androidx.room:room-runtime:2.3.0-beta02"
-    kapt "androidx.room:room-compiler:2.3.0-beta02"
-
     //RxJava
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.10'
     implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
-    //RxJava + Room
-    implementation "androidx.room:room-rxjava3:2.3.0-beta02"
     //RxJava + Retrofit
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 }

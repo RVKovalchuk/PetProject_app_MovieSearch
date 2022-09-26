@@ -1,17 +1,15 @@
 package com.example.moviesearch.di
 
 import android.content.Context
-import com.example.moviesearch.di.modules.DatabaseModule
+import com.example.moviesearch.di.modules.CoreModule
 import com.example.moviesearch.di.modules.DomainModule
-import com.example.moviesearch.di.modules.RemoteModule
-import com.example.moviesearch.view.MainActivity
 import com.example.moviesearch.viewmodel.HomeFragmentViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [RemoteModule::class, DatabaseModule::class, DomainModule::class])
+@Component(modules = [DomainModule::class, CoreModule::class])
 
 interface AppComponent {
 
