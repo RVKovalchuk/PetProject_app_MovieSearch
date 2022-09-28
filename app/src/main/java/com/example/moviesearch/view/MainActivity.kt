@@ -15,12 +15,6 @@ import com.example.moviesearch.data.entity.FilmConstants
 import com.example.moviesearch.view.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-private const val COUNT_OF_BACKSTACK_ONE = 1
-private const val TAG_FAVORITE = "favorite"
-private const val TAG_HOME = "home"
-private const val TAG_WATCH_LATER = "watch later"
-private const val TAG_SELECTION = "selection"
-
 class MainActivity : AppCompatActivity() {
     private lateinit var receiver: BroadcastReceiver
 
@@ -132,6 +126,12 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-
+    companion object {
+        private const val COUNT_OF_BACKSTACK_ONE = 1
+        private const val TAG_FAVORITE = "favorite"
+        private const val TAG_HOME = "home"
+        private const val TAG_WATCH_LATER = "watch later"
+        private const val TAG_SELECTION = "selection"
+    }
 }
 
