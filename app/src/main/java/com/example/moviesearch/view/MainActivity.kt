@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import com.example.domain.Film
 import com.example.moviesearch.utils.ConnectionChecker
 import com.example.moviesearch.R
-import com.example.moviesearch.data.entity.FilmConstants
 import com.example.moviesearch.view.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -115,7 +114,7 @@ class MainActivity : AppCompatActivity() {
 
     fun launchDetailsFragment(film: Film) {
         val bundle = Bundle()
-        bundle.putParcelable(FilmConstants.FILM_BUNDLE_KEY, film)
+        bundle.putParcelable(FILM_BUNDLE_KEY, film)
         val fragment = DetailsFragment()
         fragment.arguments = bundle
 
@@ -132,6 +131,7 @@ class MainActivity : AppCompatActivity() {
         private const val TAG_HOME = "home"
         private const val TAG_WATCH_LATER = "watch later"
         private const val TAG_SELECTION = "selection"
+        const val FILM_BUNDLE_KEY = "film"
     }
 }
 

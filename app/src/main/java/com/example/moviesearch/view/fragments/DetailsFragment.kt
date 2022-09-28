@@ -24,7 +24,8 @@ import com.bumptech.glide.Glide
 import com.example.domain.ApiConstants
 import com.example.domain.Film
 import com.example.moviesearch.R
-import com.example.moviesearch.data.entity.FilmConstants
+import com.example.moviesearch.view.MainActivity
+import com.example.moviesearch.view.notifications.NotificationHelper
 import com.example.moviesearch.viewmodel.DetailsFragmentViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.*
@@ -49,6 +50,7 @@ class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setDetails()
         pressDownload()
+        clickOnWatchLater()
     }
 
     private fun checkPermission(): Boolean {
@@ -122,15 +124,16 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    private fun pressDownload(){
-       val downloadButton =  view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_load_poster)
+    private fun pressDownload() {
+        val downloadButton =
+            view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_load_poster)
         downloadButton?.setOnClickListener {
             performAsyncLoadOfPoster()
         }
     }
 
     private fun setDetails() {
-        film = arguments?.get(FilmConstants.FILM_BUNDLE_KEY) as Film
+        film = arguments?.get(MainActivity.FILM_BUNDLE_KEY) as Film
         val fragmentDetailsButtonFavorites =
             view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_favorites)
         val fragmentDetailsButtonShare =
@@ -175,5 +178,14 @@ class DetailsFragment : Fragment() {
             startActivity(Intent.createChooser(intent, "Поделиться с: "))
         }
     }
+
+    fun clickOnWatchLater() {
+        val buttonWatchLater =
+            view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_watch_later)
+        buttonWatchLater?.setOnClickListener {
+            NotificationHelper.createNotification(requireContext(), film)
+        }
+    }
+
 
 }

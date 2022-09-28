@@ -66,6 +66,19 @@
         app:srcCompat="@drawable/ic_fragment_details_favorite_no" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fragment_details_fab_watch_later"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fragment_details_fab_margin_x3"
+        android:layout_marginTop="@dimen/fragment_details_fab_margin"
+        android:background="@color/white"
+        android:backgroundTint="@color/grey_almost_white"
+        android:contentDescription="@string/description_fab"
+        app:layout_anchor="@id/fragment_details_app_bar"
+        app:layout_anchorGravity="bottom|start"
+        app:srcCompat="@drawable/ic_menu_watch_later" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fragment_details_fab_load_poster"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
