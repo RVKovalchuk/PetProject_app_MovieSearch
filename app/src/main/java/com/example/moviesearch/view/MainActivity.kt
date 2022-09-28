@@ -1,11 +1,15 @@
 package com.example.moviesearch.view
 
+import android.content.BroadcastReceiver
+import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.domain.Film
+import com.example.moviesearch.utils.ConnectionChecker
 import com.example.moviesearch.R
 import com.example.moviesearch.data.entity.FilmConstants
 import com.example.moviesearch.view.fragments.*
@@ -18,6 +22,8 @@ private const val TAG_WATCH_LATER = "watch later"
 private const val TAG_SELECTION = "selection"
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var receiver: BroadcastReceiver
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +34,18 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
         initNavigation()
+
+        receiver = ConnectionChecker()
+        val filters = IntentFilter().apply {
+            addAction(Intent.ACTION_POWER_CONNECTED)
+            addAction(Intent.ACTION_BATTERY_LOW)
+        }
+        registerReceiver(receiver, filters)
+    }
+
+    override fun onDestroy() {
+        unregisterReceiver(receiver)
+        super.onDestroy()
     }
 
     override fun onBackPressed() {
@@ -113,7 +131,6 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
-
 
 
 }
