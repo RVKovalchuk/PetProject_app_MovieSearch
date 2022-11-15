@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
@@ -46,6 +47,7 @@ class DetailsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_details, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setDetails()
@@ -179,11 +181,12 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    fun clickOnWatchLater() {
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun clickOnWatchLater() {
         val buttonWatchLater =
             view?.findViewById<FloatingActionButton>(R.id.fragment_details_fab_watch_later)
         buttonWatchLater?.setOnClickListener {
-            NotificationHelper.createNotification(requireContext(), film)
+            NotificationHelper.notificationSet(requireContext(), film)
         }
     }
 

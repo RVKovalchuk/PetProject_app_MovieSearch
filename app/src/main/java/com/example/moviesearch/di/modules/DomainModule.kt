@@ -18,7 +18,7 @@ class DomainModule {
 
     @Provides
     @Singleton
-    fun provideInteractor(repository: MainRepository, tmbdApi: WebService) = Interactor(
+    fun provideInteractor(repository: MainRepository, tmbdApi: WebService): Interactor = Interactor(
         service = tmbdApi,
         repository = repository
     )

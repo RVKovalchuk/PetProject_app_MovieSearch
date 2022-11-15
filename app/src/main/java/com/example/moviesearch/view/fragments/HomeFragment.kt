@@ -105,23 +105,20 @@ class HomeFragment : Fragment() {
                 viewModel.getFilms()
                 it.isNotBlank()
             }
-            .map{
+            .map {
                 viewModel.getSearchResult(it)
             }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy(
-                onError = {
-                    Toast.makeText(requireContext(), "onError position", Toast.LENGTH_SHORT).show()
-                },
-                onNext = {
-                    it.subscribe ({
+            .subscribe {
+                it.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread()).subscribe({
                         filmsAdapter.addItems(it)
-                    }, {})
-
-                })
-            .addTo(autoDisposable)
-
+                    }, {
+                        Toast.makeText(requireContext(), "onError position", Toast.LENGTH_SHORT)
+                            .show()
+                    }).addTo(autoDisposable)
+            }
     }
 
     private fun initRecyclerView() {

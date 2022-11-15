@@ -20,10 +20,12 @@ class Interactor(
                 repository.putToDb(it)
             }
             .subscribeOn(Schedulers.io())
-            .subscribe()
+            .subscribe({}, {})
     }
 
     fun getFilmsFromDB(): Observable<List<Film>> = repository.getAllFilmsFromDb()
+
+    fun getWatchLaterFilmsFromDb() : Observable<List<Film>> = repository.getWatchLaterFilms()
 
     fun getSearchResultFromApi(search: String): Single<List<Film>> =
         service.getFilmsFromSearch(API_KEY, "ru-RU", search, 1)

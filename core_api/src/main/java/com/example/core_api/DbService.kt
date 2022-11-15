@@ -7,5 +7,9 @@ import io.reactivex.rxjava3.core.Observable
 interface DbService {
     fun getCashedFilms(): Observable<List<Film>>
 
+    fun getWatchLaterFilms() : Observable<List<Film>>
+
     fun insertAll(list: List<Film>)
+
+    fun insert(film: Film)
 }

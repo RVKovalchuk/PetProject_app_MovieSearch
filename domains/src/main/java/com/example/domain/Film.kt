@@ -10,4 +10,5 @@ interface Film: Parcelable {
     val description: String?
     var isInFavorites: Boolean
     val rating: Double
+    var timeWatchLater : Long
 }

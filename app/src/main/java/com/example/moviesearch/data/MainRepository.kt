@@ -16,4 +16,8 @@ class MainRepository(private val filmDataAccessObject: DbService) {
     fun getAllFilmsFromDb(): Observable<List<Film>> {
         return filmDataAccessObject.getCashedFilms()
     }
+
+    fun getWatchLaterFilms(): Observable<List<Film>> {
+        return filmDataAccessObject.getWatchLaterFilms()
+    }
 }

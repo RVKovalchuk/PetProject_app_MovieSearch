@@ -11,16 +11,17 @@
     tools:visibility="invisible">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_height="@dimen/zero_dp"
+        android:id="@+id/recycler_view"
         android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
         android:layout_marginStart="@dimen/fragment_favorites_recyclerview_margin_start"
-        android:layout_marginTop="@dimen/fragment_favorites_recyclerview_margin_top"
         android:layout_marginEnd="@dimen/fragment_favorites_recyclerview_margin_end"
         android:layout_marginBottom="@dimen/fragment_favorites_recyclerview_margin_bottom"
-        tools:listitem="@layout/film_item"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/film_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
